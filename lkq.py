@@ -13,7 +13,7 @@ def findText(xpath, tree):
     results = xpath(tree);
     return results[0].text;
 
-url = "http://www.lkqpickyourpart.com/DesktopModules/pyp_vehicleInventory/getVehicleInventory.aspx?store=" + sys.argv[1] + "&page=0&filter={kwarg}&sp=&cl=&carbuyYardCode=1265&pageSize=15&language=en-US";
+url = "http://www.lkqpickyourpart.com/DesktopModules/pyp_vehicleInventory/getVehicleInventory.aspx?store={store}&page=0&filter={query}&sp=&cl=&carbuyYardCode={yard}&pageSize=15&language=en-US";
 
 #car id identifier regex
 p = re.compile('[0-9]{4}-[0-9]{4}-[0-9]{6}');
@@ -46,7 +46,7 @@ Subject: LKQ Pick Your Part
 found = 0;
 #search url
 for q in search_terms:
-	full_url = url.format(kwarg=q);
+	full_url = url.format(query=q,store=sys.argv[1],yard=sys.argv[3]);
 	print full_url;
 	r = requests.get(full_url);
 	tree = lxml.html.fromstring(r.text)
