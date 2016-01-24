@@ -26,11 +26,11 @@ modelsel = CSSSelector('td.pypvi_model');
 yearsel = CSSSelector('td.pypvi_year');
 datesel = CSSSelector('td.pypvi_date');
 
-old_cars = open('lkq.txt').read();
+old_cars = open('/var/cache/lkq/car.cache').read();
 
 search_terms = ['volvo%20s80', 'volvo%20xc70', 'volvo%20v70', 'volvo%20s60']
 
-fout = open("lkq.txt", "a");
+fout = open("/var/cache/lkq/car.cache", "a");
 
 message = """From: LKQ PickAPart <john@petrocik.net>
 To: John Petrocik <john@petrocik.net>
