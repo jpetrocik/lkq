@@ -36,7 +36,7 @@ message = """From: LKQ PickAPart <john@petrocik.net>
 To: John Petrocik <john@petrocik.net>
 MIME-Version: 1.0
 Content-type: text/html
-Subject: Matching Cars
+Subject: LKQ Pick Your Part
 
 <h1>LKQ Pick Your Part - {store}</h1>
 <table>
