@@ -28,19 +28,19 @@ datesel = CSSSelector('td.pypvi_date');
 
 old_cars = open('/var/cache/lkq/car.cache').read();
 
-search_terms = sys.argv[4:]; #'volvo%20s60']
+search_terms = sys.argv[5:]; #'volvo%20s60']
 
 fout = open("/var/cache/lkq/car.cache", "a");
 
-message = """From: LKQ PickAPart <john@petrocik.net>
-To: John Petrocik <john@petrocik.net>
+message = """From: LKQ PickAPart <no-reply@petrocik.net>
+To: {email}
 MIME-Version: 1.0
 Content-type: text/html
-Subject: LKQ Pick Your Part
+Subject: LKQ Pick Your Part - {store}
 
 <h1>LKQ Pick Your Part - {store}</h1>
 <table>
-""".format(store=sys.argv[2])
+""".format(store=sys.argv[2], email=sys.argv[4])
 
 found = 0;
 #search url
